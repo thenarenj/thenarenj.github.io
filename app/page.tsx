@@ -1,8 +1,11 @@
+import Carousel from "./components/Carousel";
+import Navbar from "./components/Navbar";
+
 export default function Home() {
   return (
-    <main className="min-h-screen flex flex-col items-center justify-center font-primary">
-      نارنج
-      <button className="btn btn-primary">لینک</button>
+    <main className="relative h-screen font-primary">
+      <Navbar />
+      <Carousel />
     </main>
   )
 }
