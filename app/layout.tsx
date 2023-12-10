@@ -1,14 +1,17 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import localFont from 'next/font/local'
 import './globals.css'
 import { SpeedInsights } from "@vercel/speed-insights/next"
-
-const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Narenj | نارنج',
   description: 'طراحی سایت و اپلیکیشن',
 }
+
+const fontPrimary = localFont({
+  src: "../public/assets/fonts/estedad.woff2",
+  variable: "--font-estedad"
+})
 
 export default function RootLayout({
   children,
@@ -17,7 +20,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fa" dir="rtl">
-      <body className={inter.className}>
+      <body className={fontPrimary.variable}>
         {children}
         <SpeedInsights />
       </body>
