@@ -3,7 +3,7 @@ import React from 'react'
 const OrderGuide = () => {
     return (
         <div id="guide" className="carousel-item h-full bg-secondary text-secondary-content">
-            <div className='container mx-auto mb-8 px-4 flex flex-col justify-center items-center gap-8'>
+            <div className='container mx-auto mb-12 px-4 flex flex-col justify-center items-center gap-8'>
                 <h1 className="text-lg">مراحل ثبت سفارش :</h1>
                 <ul className="timeline timeline-vertical lg:timeline-horizontal text-secondary">
                     <li>
