@@ -38,7 +38,7 @@ const OrderGuide = () => {
                     <li>
                         <hr />
                         <div className="timeline-start">
-                            <a href='#home' className='btn btn-outline btn-primary'>همین حالا شروع کن !</a>
+                            <a href='#home' className='btn btn-primary'>همین حالا شروع کن !</a>
                         </div>
                     </li>
                 </ul>
