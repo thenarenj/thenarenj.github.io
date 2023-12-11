@@ -1,6 +1,7 @@
 import { RiHome5Line } from "react-icons/ri";
-import { RiInformationLine } from "react-icons/ri";
+import { RiGuideLine } from "react-icons/ri";
 import { RiGalleryLine } from "react-icons/ri";
+import { RiInformationLine } from "react-icons/ri";
 
 
 const Footer = () => {
@@ -10,20 +11,24 @@ const Footer = () => {
                 <ul className="menu menu-horizontal bg-primary rounded-box">
                     <li>
                         <a href='#home' className="tooltip tooltip-top flex flex-col items-center" data-tip="خانه">
-                            <RiHome5Line className="text-2xl" />
+                            <RiHome5Line className="text-2xl " />
                             {/* خانه */}
                         </a>
                     </li>
                     <li>
-                        <a href='#about' className="tooltip tooltip-top flex flex-col items-center" data-tip="درباره">
-                            <RiInformationLine className="text-2xl" />
-                            {/* درباره */}
+                        <a href='#guide' className="tooltip tooltip-top flex flex-col items-center" data-tip="راهنمای ثبت سفارش">
+                            <RiGuideLine className="text-2xl " />
                         </a>
                     </li>
-                    <li>
+                    {/* <li>
                         <a href='#portfolio' className="tooltip tooltip-top flex flex-col items-center" data-tip="نمونه کار">
-                            <RiGalleryLine className="text-2xl" />
-                            {/* نمونه کار */}
+                            <RiGalleryLine className="text-2xl " />
+                        </a>
+                    </li> */}
+                    <li>
+                        <a href='#about' className="tooltip tooltip-top flex flex-col items-center" data-tip="درباره">
+                            <RiInformationLine className="text-2xl " />
+                            {/* درباره */}
                         </a>
                     </li>
                 </ul>
