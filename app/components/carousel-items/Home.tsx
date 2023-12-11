@@ -14,13 +14,13 @@ const Home = () => {
                         <h1 className="card-title">راه های ارتباطی</h1>
                         <div className="mt-4">برای ثبت سفارش طراحی سایت و اپلیکیشن می توانید
                             &nbsp;
-                            <a href="#" className="link link-primary">
+                            <a href="#" className="link link-secondary">
                                 از این فرم
                             </a>
                             &nbsp;
                             استفاده کنید .
                         </div>
-                        <p className="my-4">برای ارتباط با ما می توانید از لینک های زیر استفاده کنید‌ :</p>
+                        <p className="my-4">همچنین برای ارتباط با ما می توانید از لینک های زیر استفاده کنید‌ :</p>
                         <div className="flex flex-col gap-4">
                             <a href='https://instagram.com/narenj.web' className='btn btn-outline btn-primary'>
                                 <FaInstagram className="text-2xl" />
