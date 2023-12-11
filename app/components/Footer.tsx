@@ -5,7 +5,7 @@ import { RiGalleryLine } from "react-icons/ri";
 
 const Footer = () => {
     return (
-        <footer className="absolute bottom-0 right-0 left-0 z-10 pb-8 px-4">
+        <footer className="absolute bottom-0 right-0 left-0 z-10 pb-16 px-4">
             <div className='container mx-auto flex items-center justify-center'>
                 <ul className="menu menu-horizontal bg-primary rounded-box">
                     <li>
