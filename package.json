@@ -9,6 +9,8 @@
         "lint": "next lint"
     },
     "dependencies": {
+        "@hookform/resolvers": "^3.3.2",
+        "@persian-tools/persian-tools": "^3.5.0",
         "@vercel/speed-insights": "^1.0.1",
         "kavenegar": "^1.1.4",
         "next": "14.0.4",

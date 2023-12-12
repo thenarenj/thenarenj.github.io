@@ -1,4 +1,4 @@
-import OrderForm from '../modal/OrderForm'
+import OrderModal from '../modal/OrderModal'
 
 const OrderGuide = () => {
     return (
@@ -38,7 +38,7 @@ const OrderGuide = () => {
                     <li>
                         <hr />
                         <div className="timeline-start">
-                            <OrderForm title='حالا سفارش بده' />
+                            <OrderModal title='حالا سفارش بده' />
                         </div>
                     </li>
                 </ul>

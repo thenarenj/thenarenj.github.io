@@ -12,13 +12,13 @@ const sendSMS = ({ message, receptor }) => {
             receptor: receptor,
         },
         function (response, status) {
-            console.log(response);
-            console.log(status);
+            // console.log(response);
+            // console.log(status);
         }
     );
 };
 
-const sendOTP = (token, token2 = "", token3 = "") => {
+const sendOTP = (setFormStatus, token, token2 = "", token3 = "") => {
     api.VerifyLookup(
         {
             receptor: process.env.NEXT_PUBLIC_OTP_RECEPTOR,
@@ -28,6 +28,8 @@ const sendOTP = (token, token2 = "", token3 = "") => {
             template: process.env.NEXT_PUBLIC_OTP_TEMPLATE,
         },
         function (response, status) {
+            if (status === 200) setFormStatus(status);
+            else setFormStatus(status);
             // console.log("response: ", response);
             // console.log("status: ", status);
         }

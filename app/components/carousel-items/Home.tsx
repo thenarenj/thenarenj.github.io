@@ -2,7 +2,7 @@ import { FaInstagram } from "react-icons/fa6";
 import { FaPhoneFlip } from "react-icons/fa6";
 import { FaTelegramPlane } from "react-icons/fa";
 import { RiMailOpenFill } from "react-icons/ri";
-import OrderForm from "../modal/OrderForm";
+import OrderModal from "../modal/OrderModal";
 
 const Home = () => {
     return (
@@ -12,7 +12,7 @@ const Home = () => {
                     <div className="card-body">
                         <div className="mt-4">برای ثبت سفارش طراحی سایت و اپلیکیشن می توانید از
                             &nbsp;
-                            <OrderForm className="link link-primary" title="این فرم" />
+                            <OrderModal className="link link-primary" title="این فرم" />
                             &nbsp;
                             استفاده کنید .
                         </div>

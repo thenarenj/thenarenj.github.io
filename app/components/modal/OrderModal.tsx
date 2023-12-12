@@ -1,9 +1,11 @@
+import OrderForm from "../forms/OrderForm"
+
 interface Props {
     title?: string,
     className?: string
 }
 
-const OrderForm = ({ title, className }: Props) => {
+const OrderModal = ({ title, className }: Props) => {
     return (
         <>
             {/* The button to open modal */}
@@ -15,6 +17,7 @@ const OrderForm = ({ title, className }: Props) => {
                 <div className="modal-box">
                     <h3 className="text-lg font-bold">ثبت سفارش</h3>
                     <p className="py-4 text-sm leading-loose">برای ثبت سفارش طراحی سایت و اپلیکیشن، مشخصات خواسته شده را در فرم زیر ثبت کنید تا کارشناسان ما با شما تماس بگیرند .</p>
+                    <OrderForm />
                 </div>
                 <label className="modal-backdrop" htmlFor="order_modal">Close</label>
             </div>
@@ -22,4 +25,4 @@ const OrderForm = ({ title, className }: Props) => {
     )
 }
 
-export default OrderForm
+export default OrderModal
