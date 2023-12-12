@@ -1,4 +1,5 @@
 import React from 'react'
+import OrderForm from '../modal/OrderForm'
 
 const OrderGuide = () => {
     return (
@@ -38,7 +39,7 @@ const OrderGuide = () => {
                     <li>
                         <hr />
                         <div className="timeline-start">
-                            <a href='#home' className='btn btn-primary'>همین حالا شروع کن !</a>
+                            <OrderForm title='حالا سفارش بده' />
                         </div>
                     </li>
                 </ul>

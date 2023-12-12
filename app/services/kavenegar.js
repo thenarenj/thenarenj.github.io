@@ -1,14 +1,14 @@
 import { KavenegarApi } from "kavenegar";
 
 const api = KavenegarApi({
-    apikey: "api key",
+    apikey: process.env.NEXT_PUBLIC_KAVENEGAR_API,
 });
 
 const sendSMS = ({ message, receptor }) => {
     api.Send(
         {
             message: message,
-            sender: "10004346",
+            sender: process.env.NEXT_PUBLIC_SMS_SENDER,
             receptor: receptor,
         },
         function (response, status) {
@@ -18,16 +18,18 @@ const sendSMS = ({ message, receptor }) => {
     );
 };
 
-const sendOTP = ({ token, receptor }) => {
+const sendOTP = (token, token2 = "", token3 = "") => {
     api.VerifyLookup(
         {
-            receptor: receptor,
+            receptor: process.env.NEXT_PUBLIC_OTP_RECEPTOR,
             token: token,
-            template: "template-name",
+            token2: token2,
+            token3: token3,
+            template: process.env.NEXT_PUBLIC_OTP_TEMPLATE,
         },
         function (response, status) {
-            console.log(response);
-            console.log(status);
+            // console.log("response: ", response);
+            // console.log("status: ", status);
         }
     );
 };

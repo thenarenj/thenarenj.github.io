@@ -2,25 +2,21 @@ import { FaInstagram } from "react-icons/fa6";
 import { FaPhoneFlip } from "react-icons/fa6";
 import { FaTelegramPlane } from "react-icons/fa";
 import { RiMailOpenFill } from "react-icons/ri";
-import Image from "next/image";
+import OrderForm from "../modal/OrderForm";
 
 const Home = () => {
     return (
         <div id="home" className="carousel-item h-full bg-secondary-content">
             <div className='container mx-auto mb-16 px-4 flex flex-col justify-center items-center gap-8'>
-                {/* <Image src={'/assets/images/logotypefa.png'} className="mb-8" alt="logo" width={300} height={105} /> */}
                 <div className="card bg-base-100 shadow-xl">
                     <div className="card-body">
-                        <h1 className="card-title">راه های ارتباطی</h1>
-                        <div className="mt-4">برای ثبت سفارش طراحی سایت و اپلیکیشن می توانید
+                        <div className="mt-4">برای ثبت سفارش طراحی سایت و اپلیکیشن می توانید از
                             &nbsp;
-                            <a href="#" className="link link-secondary">
-                                از این فرم
-                            </a>
+                            <OrderForm className="link link-primary" title="این فرم" />
                             &nbsp;
                             استفاده کنید .
                         </div>
-                        <p className="my-4">همچنین برای ارتباط با ما می توانید از لینک های زیر استفاده کنید‌ :</p>
+                        <h1 className="card-title my-4">راه های ارتباطی</h1>
                         <div className="flex flex-col gap-4">
                             <a href='https://instagram.com/narenj.web' className='btn btn-outline btn-primary'>
                                 <FaInstagram className="text-2xl" />
@@ -41,7 +37,6 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     )
