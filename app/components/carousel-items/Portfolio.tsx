@@ -1,5 +1,3 @@
-import React from 'react'
-
 const Portfolio = () => {
     return (
         <div id="portfolio" className="carousel-item h-full bg-secondary-content">

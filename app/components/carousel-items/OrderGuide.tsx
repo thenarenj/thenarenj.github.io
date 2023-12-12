@@ -1,4 +1,3 @@
-import React from 'react'
 import OrderForm from '../modal/OrderForm'
 
 const OrderGuide = () => {
