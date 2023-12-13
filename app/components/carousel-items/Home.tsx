@@ -3,6 +3,7 @@ import { FaPhoneFlip } from "react-icons/fa6";
 import { FaTelegramPlane } from "react-icons/fa";
 import { RiMailOpenFill } from "react-icons/ri";
 import OrderModal from "../modal/OrderModal";
+import Link from "next/link";
 
 const Home = () => {
     return (
@@ -18,22 +19,22 @@ const Home = () => {
                         </div>
                         <h1 className="card-title my-4">راه های ارتباطی</h1>
                         <div className="flex flex-col gap-4">
-                            <a href='https://instagram.com/narenj.web' className='btn btn-outline btn-primary'>
+                            <Link href='https://instagram.com/narenj.web' className='btn btn-outline btn-primary'>
                                 <FaInstagram className="text-2xl" />
                                 اینستاگرام
-                            </a>
-                            <a href='https://t.me/narenj_web' className='btn btn-outline btn-primary'>
+                            </Link>
+                            <Link href='https://t.me/narenj_web' className='btn btn-outline btn-primary'>
                                 <FaTelegramPlane className="text-2xl" />
                                 تلگرام
-                            </a>
-                            <a href='tel:+981144422984' className='btn btn-outline btn-primary'>
+                            </Link>
+                            <Link href='tel:+981144422984' className='btn btn-outline btn-primary'>
                                 <FaPhoneFlip className="text-xl" />
                                 تماس
-                            </a>
-                            <a href='mailto:narenj.official@gmail.com' className='btn btn-outline btn-primary'>
+                            </Link>
+                            <Link href='mailto:narenj.official@gmail.com' className='btn btn-outline btn-primary'>
                                 <RiMailOpenFill className="text-2xl" />
                                 ایمیل
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>

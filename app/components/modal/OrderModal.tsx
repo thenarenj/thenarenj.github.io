@@ -9,7 +9,7 @@ const OrderModal = ({ title, className }: Props) => {
     return (
         <>
             {/* The button to open modal */}
-            <label htmlFor="order_modal" className={className ? className : "btn btn-primary"}>{title ? title : "ثبت سفارش"}</label>
+            <label htmlFor="order_modal" className={className ? className : "btn btn-primary text-secondary-content"}>{title ? title : "ثبت سفارش"}</label>
 
             {/* Put this part before </body> tag */}
             <input type="checkbox" id="order_modal" className="modal-toggle" />

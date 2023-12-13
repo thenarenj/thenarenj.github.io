@@ -1,3 +1,5 @@
+import Link from "next/link"
+
 const About = () => {
     return (
         <div id="about" className="carousel-item h-full bg-secondary-content">
@@ -7,7 +9,7 @@ const About = () => {
                         <h2 className="card-title">درباره ما</h2>
                         <p className='my-4'>Click the button to listen on Spotiwhy app.</p>
                         <div className="card-actions justify-end">
-                            <a href="#home" className="btn btn-outline btn-primary">ارتباط با ما</a>
+                            <Link href="#home" className="btn btn-outline btn-primary">ارتباط با ما</Link>
                         </div>
                     </div>
                 </div>

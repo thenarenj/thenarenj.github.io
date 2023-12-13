@@ -2,7 +2,7 @@
 import { sendOTP } from "@/app/services/kavenegar"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { digitsFaToEn, phoneNumberValidator } from "@persian-tools/persian-tools"
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
 
@@ -19,10 +19,22 @@ type FormData = {
 }
 
 const schema = z.object({
-    name: z.string().min(3, { message: 'نام باید حداقل شامل ۳ حرف باشد' }),
+    name: z.string().min(3, { message: 'نام باید حداقل شامل ۳ حرف باشد' }).max(15, { message: 'نام باید حداکثر شامل ۱۵ حرف باشد' }),
     phone: z.string().refine((num) => phoneNumberValidator(digitsFaToEn(num)), 'شماره موبایل وارد شده صحیح نیست'),
-    category: z.string()
+    category: z.string().min(1, { message: 'یک موضوع انتخاب کنید' })
 })
+
+function slugify(inp: string) {
+    let titleStr = inp.replace(/^\s+|\s+$/g, '');
+    titleStr = titleStr.toLowerCase();
+    //persian support
+    titleStr = titleStr.replace(/[^a-z0-9_\s-ءاأإآؤئبتثجحخدذرزسشصضطظعغفقكلمنهويةى]#u/, '')
+        // Collapse whitespace and replace by -
+        .replace(/\s+/g, '-')
+        // Collapse dashes
+        .replace(/-+/g, '-');
+    return titleStr;
+}
 
 export default function OrderForm() {
     const [formStatus, setFormStatus] = useState<number | string>('')
@@ -38,7 +50,7 @@ export default function OrderForm() {
         setFormStatus('loading');
         sendOTP(
             setFormStatus,
-            data.name,
+            slugify(data.name),
             data.phone,
             data.category
         )
@@ -101,13 +113,13 @@ export default function OrderForm() {
                     className="select select-bordered w-full max-w-xs mt-2 mb-4"
                     {...register("category")}
                 >
-                    <option value="" disabled>انتخاب کنید</option>
+                    <option value="">انتخاب کنید</option>
                     <option value="WEBSITE">طراحی سایت</option>
                     <option value="APPLICATION">طراحی اپلیکیشن</option>
                 </select>
             </div>
             {formStatus !== 200 &&
-                <button type="submit" className="btn btn-primary" disabled={formStatus === 'loading'} >
+                <button type="submit" className="btn btn-primary text-secondary-content" disabled={formStatus === 'loading'} >
                     {formStatus === 'loading' ?
                         <span className="loading loading-dots loading-lg"></span>
                         :
