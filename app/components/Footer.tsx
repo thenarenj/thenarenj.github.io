@@ -16,7 +16,7 @@ const Footer = () => {
                             {/* خانه */}
                         </Link>
                     </li>
-                    <li>
+                    <li className="mx-1">
                         <Link href='#guide' className="tooltip tooltip-top flex flex-col items-center" data-tip="راهنمای ثبت سفارش">
                             <RiGuideLine className="text-2xl " />
                         </Link>

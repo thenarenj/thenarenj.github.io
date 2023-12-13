@@ -16,7 +16,7 @@ const OrderModal = ({ title, className }: Props) => {
             <div className="modal" role="dialog">
                 <div className="modal-box">
                     <h3 className="text-lg font-bold">ثبت سفارش</h3>
-                    <p className="py-4 text-sm leading-loose">برای ثبت سفارش طراحی سایت و اپلیکیشن، مشخصات خواسته شده را در فرم زیر ثبت کنید تا کارشناسان ما با شما تماس بگیرند .</p>
+                    <p className="py-4 text-sm leading-loose">برای درخواست مشاوره رایگان و یا ثبت سفارش، مشخصات خواسته شده را در فرم زیر ثبت کنید .</p>
                     <OrderForm />
                 </div>
                 <label className="modal-backdrop" htmlFor="order_modal">Close</label>

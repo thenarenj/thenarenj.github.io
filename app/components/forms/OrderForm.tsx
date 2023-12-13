@@ -8,8 +8,9 @@ import { z } from "zod"
 
 
 enum Category {
-    WEBSITE = "Website",
-    APPLICATION = "Application",
+    Moshavere = "مشاوره",
+    Website = "سایت",
+    Application = "اپلیکیشن",
 }
 
 type FormData = {
@@ -102,7 +103,7 @@ export default function OrderForm() {
                     {...register("phone")}
                 />
             </div>
-            <div className="w-full max-w-xs">
+            <div className="w-full max-w-xs mb-2">
                 <label htmlFor="category" className="text-sm">
                     موضوع
                     {errors.category?.message && <span className="mr-2 text-xs text-primary">{errors.category?.message}</span>}
@@ -114,12 +115,13 @@ export default function OrderForm() {
                     {...register("category")}
                 >
                     <option value="">انتخاب کنید</option>
-                    <option value="WEBSITE">طراحی سایت</option>
-                    <option value="APPLICATION">طراحی اپلیکیشن</option>
+                    <option value="مشاوره">مشاوره</option>
+                    <option value="سایت">طراحی سایت</option>
+                    <option value="اپلیکیشن">طراحی اپلیکیشن</option>
                 </select>
             </div>
             {formStatus !== 200 &&
-                <button type="submit" className="btn btn-primary text-secondary-content" disabled={formStatus === 'loading'} >
+                <button type="submit" className="btn btn-primary w-full max-w-xs text-secondary-content" disabled={formStatus === 'loading'} >
                     {formStatus === 'loading' ?
                         <span className="loading loading-dots loading-lg"></span>
                         :
