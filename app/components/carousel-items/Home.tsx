@@ -11,7 +11,7 @@ const Home = () => {
             <div className='container mx-auto mb-16 px-4 flex flex-col justify-center items-center gap-8'>
                 <div className="card bg-base-100 shadow-xl">
                     <div className="card-body">
-                        <div className="mt-4">برای ثبت سفارش طراحی سایت و اپلیکیشن می توانید از
+                        <div className="mt-4">برای مشاوره و ثبت سفارش طراحی سایت و اپلیکیشن می توانید از
                             &nbsp;
                             <OrderModal className="link link-primary" title="این فرم" />
                             &nbsp;
