@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import localFont from 'next/font/local'
 import './globals.css'
-import { SpeedInsights } from "@vercel/speed-insights/next"
+// import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export const metadata: Metadata = {
   title: 'Narenj | نارنج',
@@ -22,7 +22,7 @@ export default function RootLayout({
     <html lang="fa" dir="rtl">
       <body className={fontPrimary.variable}>
         {children}
-        <SpeedInsights />
+        {/* <SpeedInsights /> */}
       </body>
     </html>
   )
