@@ -1,7 +1,8 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 import { KavenegarApi } from "kavenegar";
 import { slugify } from "@/app/utils/utils";
+import { digitsFaToEn } from "@persian-tools/persian-tools";
 
 let jobStatus = 200;
 
@@ -52,7 +53,7 @@ export async function POST(request) {
             html: `
             <div dir="rtl">
                 <h2>${body.name}</h2>
-                <h3>شماره تماس : <span dir="ltr">${body.phone}</span></h3>
+                <h3>شماره تماس : <span dir="ltr">${digitsFaToEn(body.phone)}</span></h3>
                 <h3>موضوع : ${body.category}</h3>
                 <p>توضیحات : ${body.description}</p>
             </div>
@@ -65,7 +66,7 @@ export async function POST(request) {
             jobStatus = 400;
         });
 
-    sendOTP(slugify(body.name), body.phone, body.category);
+    sendOTP(slugify(body.name), digitsFaToEn(body.phone), body.category);
 
     return NextResponse.json("finished", { status: jobStatus });
 }
