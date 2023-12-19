@@ -1,7 +1,7 @@
 'use client'
-import { sendOTP } from "@/app/services/kavenegar"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { digitsFaToEn, phoneNumberValidator } from "@persian-tools/persian-tools"
+import axios from "axios"
 import { useState } from "react"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
@@ -16,26 +16,16 @@ enum Category {
 type FormData = {
     name: string,
     phone: string,
-    category: Category
+    category: Category,
+    description: string
 }
 
 const schema = z.object({
     name: z.string().min(3, { message: 'نام باید حداقل شامل ۳ حرف باشد' }).max(15, { message: 'نام باید حداکثر شامل ۱۵ حرف باشد' }),
     phone: z.string().refine((num) => phoneNumberValidator(digitsFaToEn(num)), 'شماره موبایل وارد شده صحیح نیست'),
-    category: z.string().min(1, { message: 'یک موضوع انتخاب کنید' })
+    category: z.string().min(1, { message: 'یک موضوع انتخاب کنید' }),
+    description: z.string()
 })
-
-function slugify(inp: string) {
-    let titleStr = inp.replace(/^\s+|\s+$/g, '');
-    titleStr = titleStr.toLowerCase();
-    //persian support
-    titleStr = titleStr.replace(/[^a-z0-9_\s-ءاأإآؤئبتثجحخدذرزسشصضطظعغفقكلمنهويةى]#u/, '')
-        // Collapse whitespace and replace by -
-        .replace(/\s+/g, '-')
-        // Collapse dashes
-        .replace(/-+/g, '-');
-    return titleStr;
-}
 
 export default function OrderForm() {
     const [formStatus, setFormStatus] = useState<number | string>('')
@@ -49,12 +39,15 @@ export default function OrderForm() {
 
     const onSubmit = handleSubmit((data) => {
         setFormStatus('loading');
-        sendOTP(
-            setFormStatus,
-            slugify(data.name),
-            data.phone,
-            data.category
-        )
+        axios.post('/api/contact/', {
+            name: data.name,
+            phone: data.phone,
+            category: data.category,
+            description: data.description
+        })
+            .then((res) => setFormStatus(res.status))
+            .catch((err) => setFormStatus(err.status))
+
     })
 
     // useEffect(() => {
@@ -119,6 +112,18 @@ export default function OrderForm() {
                     <option value="سایت">طراحی سایت</option>
                     <option value="اپلیکیشن">طراحی اپلیکیشن</option>
                 </select>
+            </div>
+            <div className="w-full max-w-xs mb-2 flex flex-col">
+                <label htmlFor="description" className="text-sm">
+                    توضیحات
+                </label>
+                <textarea
+                    placeholder="در صورت لزوم، بیشتر توضیح دهید"
+                    disabled={formStatus === 200}
+                    id="description"
+                    className="textarea textarea-bordered mt-2 mb-4"
+                    {...register("description")}
+                />
             </div>
             {formStatus !== 200 &&
                 <button type="submit" className="btn btn-primary w-full max-w-xs text-secondary-content" disabled={formStatus === 'loading'} >
