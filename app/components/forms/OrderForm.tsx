@@ -126,7 +126,7 @@ export default function OrderForm() {
                 />
             </div>
             {formStatus !== 200 &&
-                <button type="submit" className="btn btn-primary w-full max-w-xs text-secondary-content" disabled={formStatus === 'loading'} >
+                <button type="submit" className="btn btn-secondary w-full max-w-xs text-secondary-content" disabled={formStatus === 'loading'} >
                     {formStatus === 'loading' ?
                         <span className="loading loading-dots loading-lg"></span>
                         :

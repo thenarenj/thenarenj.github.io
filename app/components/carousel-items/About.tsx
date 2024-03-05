@@ -29,7 +29,7 @@ const About = () => {
                             </p>
                         </div>
                         <div className="card-actions justify-end">
-                            <Link href="#home" className="btn btn-outline btn-primary">ارتباط با ما</Link>
+                            <Link href="#home" className="btn btn-outline btn-secondary">ارتباط با ما</Link>
                         </div>
                     </div>
                 </div>

@@ -19,8 +19,8 @@ const config: Config = {
             {
                 light: {
                     ...require("daisyui/src/theming/themes")["light"],
-                    primary: "#F05941",
-                    secondary: "333333",
+                    primary: "#FB4F14",
+                    secondary: "#002244",
                 },
             },
         ], // false: only light + dark | true: all themes | array: specific themes like this ["light", "dark", "cupcake"]
